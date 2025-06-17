@@ -10,7 +10,6 @@
   margin-top: 2rem;
 }
 
-/* Partie des graphiques à gauche */
 .dashboard-charts {
   flex: 1;
   display: flex;
@@ -18,7 +17,12 @@
   gap: 2rem;
 }
 
-/* Colonne des StatCards à droite */
+.row-charts{
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .stats-column {
   width: 258px;
   display: flex;

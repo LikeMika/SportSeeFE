@@ -12,7 +12,6 @@ export default function ProfilePage() {
 
   return (
     <div className="page-container">
-      {/* Header */}
       <header className="header">
         <img src={logo} alt="Logo" className="logo" />
         <nav className="menu">
@@ -22,10 +21,7 @@ export default function ProfilePage() {
           <span>Communauté</span>
         </nav>
       </header>
-
-      {/* Body */}
       <div className="body-container">
-        {/* Sidebar */}
         <aside className="sidebar">
           <div className="sidebar-icons">
             <img src={meditation} alt="Meditation" />
@@ -35,8 +31,6 @@ export default function ProfilePage() {
           </div>
           <div className="copyright">Copyright, SportSee 2020</div>
         </aside>
-
-        {/* Main */}
         <main className="content">
           <Dashboard userId={userId} />
         </main>
