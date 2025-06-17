@@ -1,15 +1,59 @@
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+import '../style/DailySession.css';
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom-tooltip">
+        {`${payload[0].value}min`}
+      </div>
+    );
+  }
+  return null;
+};
 
 const DailySession = ({ data }) => {
-    return (
-        
-  <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-    <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" />
-    <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-    <XAxis dataKey="day" />
-    <Tooltip />
-    <YAxis orientation="right" dataKey="sessionLength" hide />
-  </LineChart>
+  return (
+    <div className="daily-session-container">
+      <div className="daily-session-title">Durée moyenne des sessions</div>
+
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          data={data}
+          margin={{ top: 60, right: 20, bottom: 20, left: 20 }}
+        >
+          <Line
+            type="monotone"
+            dataKey="sessionLength"
+            stroke="#FFFFFF"
+            strokeWidth={2}
+            dot={false}
+            activeDot={{
+              r: 4,
+              stroke: 'rgba(255,255,255,0.5)',
+              strokeWidth: 10,
+              fill: '#FFFFFF',
+            }}
+          />
+          <XAxis
+            dataKey="day"
+            tickLine={false}
+            axisLine={false}
+            tick={{ fill: '#FFFFFF', fontSize: 12, fontWeight: 500 }}
+            padding={{ left: 10, right: 10 }}
+          />
+          <YAxis hide />
+          <Tooltip content={<CustomTooltip />} cursor={false} />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
