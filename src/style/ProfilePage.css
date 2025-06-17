@@ -1,14 +1,15 @@
-body {
-    margin: 0;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .page-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   font-family: Arial, sans-serif;
 }
-
 .header {
   height: 91px;
   background-color: black;
@@ -17,7 +18,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-
+  font-weight: bold;
 }
 
 .logo {
