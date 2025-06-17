@@ -1,8 +1,8 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-
+import "../style/DailyActivityChart.css";
 const DailyActivityChart = ({ data }) => {
   return (
-    <div className="chart-container" style={{ marginTop: "2rem", background: "#fbfbfb", padding: "1rem", borderRadius: "5px" }}>
+    <div className="chart-container">
       <h4 style={{ marginBottom: "1rem" }}>Activité quotidienne</h4>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>
