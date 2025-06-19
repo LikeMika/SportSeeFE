@@ -8,7 +8,7 @@ import { mockPerformance } from "../mocks/mockPerformance";
 import { formatPerformanceData } from '../utils/formatPerformanceData'
 
 export async function getUserById(userId) {
-  const rawData = mockUsers[userId]
+  const rawData = mockUsers[userId] // reponse en json
   if (!rawData) throw new Error('User not found')
   return formatUserData(rawData)
 }

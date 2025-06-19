@@ -6,7 +6,7 @@ import DailySession from "./DailySessionsLineChart.jsx";
 import { formatKeyData } from "../utils/formatKeyData";
 import StatCard from "./StatCard";
 import PerformanceRadarChart from "./PerformanceRadarChart.jsx"
-
+import ScoreRadialChart from "./ScoreRadialChart.jsx"
 import "../style/Dashboard.css";
 
 const Dashboard = ({ userId }) => {
@@ -17,26 +17,30 @@ const Dashboard = ({ userId }) => {
 
 
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const user = await getUserById(userId);
-        const activity = await getUserActivity(userId);
-        const session = await getUserAverageSessions(userId);
-        const performance = await getUserPerformance(userId);
-        setUserData(user);
-        setActivityData(activity);
-        setSessionsData(session);
-        setPerformanceData(performance);
-      } catch (err) {
-        console.error("Erreur lors du chargement des données :", err);
-      }
+useEffect(() => {
+  async function fetchData() {
+    try {
+      const [user, activity, session, performance] = await Promise.all([
+        getUserById(userId),
+        getUserActivity(userId),
+        getUserAverageSessions(userId),
+        getUserPerformance(userId),
+      ]);
+      setUserData(user);
+      setActivityData(activity);
+      setSessionsData(session);
+      setPerformanceData(performance);
+    } catch (err) {
+      console.error("Erreur lors du chargement des données :", err);
     }
+  }
 
-    fetchData();
-  }, [userId]);
+  fetchData();
+}, [userId]);
+
 
   if (!userData) return <p></p>;
+  // ne vérifie pas les autres appels
 
   const keyData = userData.keyData;
   const stats = formatKeyData(keyData);
@@ -52,6 +56,7 @@ const Dashboard = ({ userId }) => {
         <div className="row-charts">
         <DailySession data={activitySession} />
         <PerformanceRadarChart data={performanceData} />
+        <ScoreRadialChart data={[{ name: "Score", score: userData.score, fill: "#FF0000" }]} />
         </div>
       </div>
       <div className="stats-column">
