@@ -1,17 +1,5 @@
-import { useEffect, useState } from 'react'
-import { getUserById } from '../services/userService'
-
-const Welcome = () => {
-  const [firstName, setFirstName] = useState(null)
-
-  useEffect(() => {
-    getUserById(18)
-      .then(user => setFirstName(user.firstName))
-      .catch(err => console.error(err))
-  }, [])
-
+const Welcome = ({ firstName }) => {
   if (!firstName) return <p>Chargement...</p>
-
   return (
     <div className="greeting">
       <h1>Bonjour {firstName}</h1>
@@ -19,5 +7,4 @@ const Welcome = () => {
     </div>
   )
 }
-
 export default Welcome
