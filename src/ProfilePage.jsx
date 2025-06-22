@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import './style/ProfilePage.css';
 import logo from './assets/logo.png';
 import meditation from './assets/meditation.png';
@@ -8,7 +9,7 @@ import muscu from './assets/muscu.png';
 import Dashboard from "./components/Dashboard";
 
 export default function ProfilePage() {
-  const userId = 18;
+const { userId } = useParams();
 
   return (
     <div className="page-container">
@@ -32,7 +33,7 @@ export default function ProfilePage() {
           <div className="copyright">Copyright, SportSee 2020</div>
         </aside>
         <main className="content">
-          <Dashboard userId={userId} />
+          <Dashboard userId={parseInt(userId)} />
         </main>
       </div>
     </div>
