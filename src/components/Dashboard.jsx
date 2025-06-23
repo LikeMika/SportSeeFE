@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Welcome from "../components/Welcome";
-import DailyActivityChart from "./DailyActivityChart.jsx";
+import DailyActivityChart from "./charts/DailyActivityChart.jsx";
 import { getUserById, getUserActivity, getUserAverageSessions, getUserPerformance } from "../services/userService";
-import DailySession from "./DailySessionsLineChart.jsx"; 
+import DailySession from "./charts/DailySessionsLineChart.jsx"; 
 import { formatKeyData } from "../utils/formatKeyData";
 import StatCard from "./StatCard";
-import PerformanceRadarChart from "./PerformanceRadarChart.jsx"
-import ScoreRadialChart from "./ScoreRadialChart.jsx"
+import PerformanceRadarChart from "./charts/PerformanceRadarChart.jsx"
+import ScoreRadialChart from "./charts/ScoreRadialChart.jsx"
 import "../style/Dashboard.css";
 
 const Dashboard = ({ userId }) => {
