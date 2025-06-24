@@ -6,7 +6,7 @@ import {
   PolarAngleAxis,
   ResponsiveContainer
 } from "recharts";
-import "../style/RadarChartPerformance.css";
+import "../../style/RadarChartPerformance.css";
 
 export default function PerformanceRadarChart({ data }) {
   if (!data || data.length === 0) return null;

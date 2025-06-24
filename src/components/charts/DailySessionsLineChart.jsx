@@ -6,7 +6,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import '../style/DailySession.css';
+import '../../style/DailySession.css';
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {

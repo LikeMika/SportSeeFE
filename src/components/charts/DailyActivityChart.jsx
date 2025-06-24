@@ -1,5 +1,5 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import "../style/DailyActivityChart.css";
+import "../../style/DailyActivityChart.css";
 const DailyActivityChart = ({ data }) => {
   return (
     <div className="chart-container">
