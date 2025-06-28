@@ -1,5 +1,7 @@
 .daily-session-container {
-  width: 258px;
+  width: 100%;
+  max-width: 258px;
+  min-width: 200px;
   height: 263px;
   background-color: #ff0000;
   border-radius: 5px;

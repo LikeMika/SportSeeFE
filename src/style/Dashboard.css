@@ -17,11 +17,13 @@
   gap: 2rem;
 }
 
-.row-charts{
-    display: flex;
-    justify-content: space-between;
-
+.row-charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
 }
+
 
 .stats-column {
   width: 258px;

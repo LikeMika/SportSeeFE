@@ -30,6 +30,7 @@ useEffect(() => {
       setActivityData(activity);
       setSessionsData(session);
       setPerformanceData(performance);
+      //faire setIsLoadedData -> vérifie si les données sont chargées
     } catch (err) {
       console.error("Erreur lors du chargement des données :", err);
     }
@@ -39,8 +40,9 @@ useEffect(() => {
 }, [userId]);
 
 
-  if (!userData) return <p></p>;
-  // ne vérifie pas les autres appels
+if (!userData || activityData.length === 0 || activitySession.length === 0 || performanceData.length === 0) {
+  return <p>Aucun profil trouvé</p>;
+}
 
   const keyData = userData.keyData;
   const stats = formatKeyData(keyData);
