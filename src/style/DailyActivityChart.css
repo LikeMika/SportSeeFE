@@ -1,5 +1,47 @@
-.chart-container {
-    background-color: #fbfbfb;
-    padding: 1rem;
-    border-radius: 5px;
+.chart-container { 
+  background-color: #fbfbfb;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.custom-legend {
+  display: flex;
+  gap: 1rem;
+  font-size: 14px;
+  color: #74798C;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-dot.black {
+  background-color: #282D30;
+}
+
+.legend-dot.red {
+  background-color: #E60000;
+}
+
+.custom-tooltip-bar {
+  background-color: #E60000;
+  color: white;
+  padding: 0.5rem 0.7rem;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
 }
